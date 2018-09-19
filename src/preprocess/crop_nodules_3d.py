@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # AWS VERSION
-# example patch call:
-# ./extract_patches.py -subset 5 -slices 64 -dim 64
+# example usage:
+# ./crop_nodules.py -subset 5 -slices 64 -dim 64
 
 #### ---- Imports & Dependencies ---- ####
 import sys
@@ -26,11 +26,11 @@ parser.add_argument('-hdf5',
 					dest="hdf5",
 					default=True,
 					help='Save processed data to hdf5')
-parser.add_argument('-hu_norm',
-					action="store_true",
-					dest="hu_norm",
-					default=False,
-					help='Normalize Patch to -1000 - 400 HU')
+# parser.add_argument('-hu_norm',
+# 					action="store_true",
+# 					dest="hu_norm",
+# 					default=False,
+# 					help='Normalize Patch to -1000 - 400 HU')
 parser.add_argument('-slices',
 					type=int,
 					action="store",
@@ -60,40 +60,38 @@ args = parser.parse_args()
 
 #### ---- ConfigParse Utility ---- ####
 config = ConfigParser()
-config.read('extract_patches_config.ini') #local just for now (need if - else for AWS)
+config.read('../../configs/crop_nodules_3d.ini') #local just for now (need if - else for AWS)
 '''
-Example extract_patches_config.ini file:
+Example crop_nodules_3d.ini file:
 	[local]
 	LUNA_PATH = ~/LUNA16/
 	CSV_PATH = ~/LUNA16/csv-files/
 	IMG_PATH = ~/LUNA16/patches/
 	[remote]
-	# - when on AWS
+	# - for remote on AWS
 '''
+### ---- Global Vars ---- ####
+WORK_REMOTE = args.remote
+if (WORK_REMOTE):
+	LUNA_PATH = config.get('remote', 'LUNA_PATH')
+	CSV_PATH = config.get('remote', 'CSV_PATH')
+	IMG_PATH = config.get('remote', 'IMG_PATH')
+	PREPROCESSED_PATH = config.get('remote', 'PREPROCESSED_PATH')
+else:
 
-#### ---- Global Vars ---- ####
-# LUNA_PATH = config.get('local', 'LUNA_PATH')
-# CSV_PATH = config.get('local', 'CSV_PATH')
-# IMG_PATH = config.get('local', 'IMG_PATH')
-
-LUNA_PATH = config.get('remote', 'LUNA_PATH')
-CSV_PATH = config.get('remote', 'CSV_PATH')
-IMG_PATH = config.get('remote', 'IMG_PATH')
-PREPROCESSED_PATH = config.get('remote', 'PREPROCESSED_PATH')
+	LUNA_PATH = config.get('local', 'LUNA_PATH')
+	CSV_PATH = config.get('local', 'CSV_PATH')
+	IMG_PATH = config.get('local', 'IMG_PATH')
 
 SUBSET = args.subset
 SAVE_HDF5 = args.hdf5
-HU_NORM = args.hu_norm
 PATCH_DIM = args.dim
 NUM_SLICES = args.slices
 CHANNELS = 1
 PATCH_WIDTH = PATCH_DIM/2
 PATCH_HEIGHT = PATCH_DIM/2
 PATCH_DEPTH = NUM_SLICES/2
-# WORK_REMOTE = args.remote #add later w/ AWS
-
 DF_NODE = pd.read_csv(CSV_PATH + "candidates_V2.csv")
-# DF_NODE = pd.read_csv(CSV_PATH + "candidates_with_annotations.csv")
 FILE_LIST = []
 SUBSET_LIST = []
 for unique_set in SUBSET:
@@ -103,19 +101,7 @@ for unique_set in SUBSET:
 	for elements in mhd_files: #making sure we match each globbed mhd file to a subset num
 		SUBSET_LIST.append(int(subset_num)) #pass this list later to write subset num to HDF5
 
-
 #### ---- Helper Functions ---- ####
-def normalizePlanes(npzarray):
-	"""
-	Normalize pixel depth into Hounsfield units (HU), between -1000 - 400 HU
-	All other HU will be masked. Then we normalize pixel values between 0 and 1.
-	"""
-	maxHU, minHU = 400., -1000.
-	npzarray = (npzarray - minHU) / (maxHU - minHU)
-	npzarray[npzarray>1] = 1.
-	npzarray[npzarray<0] = 0.
-	return npzarray
-
 def normalize_img(img):
 	"""
 	Sets the MHD image to be approximately 1.0 mm voxel size
@@ -219,7 +205,6 @@ def write_to_hdf5(dset_and_data,first_patch=False):
 	dset[row, :] = data # Insert data into new row
 	return
 
-
 #### ---- Process CT Scans and extract Patches (the pipeline) ---- ####
 def main():
 	"""
@@ -266,7 +251,6 @@ def main():
 			spacing = np.array(itk_img.GetSpacing())    # spacing of voxels in world coordinates (mm)
 			scan_number += 1
 
-
 			#### ---- Iterating through a CT scan's slices ---- ####
 			for candidate_idx, cur_row in mini_df.iterrows(): # Iterate through all candidates (in dataframe)
 				# This is the real world x,y,z coordinates of possible nodule (in mm)
@@ -278,7 +262,6 @@ def main():
 				center = np.array([candidate_x, candidate_y, candidate_z])   # candidate center
 				voxel_center = np.rint(np.abs(center / spacing - origin)).astype(int)  # candidate center in voxels
 
-
 				#### ---- Generating the 2d/2.5d/3d Patch ---- ####
 				bbox = make_bbox(voxel_center, width, height, slice_z, origin, class_id) #return bounding box
 				patch = img_array[
@@ -287,11 +270,6 @@ def main():
 					bbox[1][0]:bbox[1][1]]
 
 				# DEBUG print(patch.shape) #uncomment to debug shape size being written
-
-				#### ---- Perform Hounsfield Normlization ---- ####
-				if HU_NORM:
-					patch = normalizePlanes(patch) #normalize patch to HU units
-
 
 				#### ---- Prepare Data for HDF5 insert ---- ####
 				patch = patch.ravel().reshape(1,-1) #flatten img to (1 x N)
