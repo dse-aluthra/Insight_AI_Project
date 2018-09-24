@@ -11,6 +11,8 @@ __pycache__/
 data/raw/
 data/processed/
 data/preprocessed/
+*-ignore.py
+*-ignore.ipynb
 develop-eggs/
 dist/
 downloads/
