@@ -1,7 +1,8 @@
-#! /usr/bin/env python
+#! /usr/bin/python
+
 # AWS VERSION
 # example usage:
-# ./crop_nodules.py -subset 5 -slices 64 -dim 64
+# ./crop_nodules.py -subset 5 -dim 32 -slices 32
 
 #### ---- Imports & Dependencies ---- ####
 import sys
@@ -26,11 +27,6 @@ parser.add_argument('-hdf5',
 					dest="hdf5",
 					default=True,
 					help='Save processed data to hdf5')
-# parser.add_argument('-hu_norm',
-# 					action="store_true",
-# 					dest="hu_norm",
-# 					default=False,
-# 					help='Normalize Patch to -1000 - 400 HU')
 parser.add_argument('-slices',
 					type=int,
 					action="store",
