@@ -1,4 +1,4 @@
-! /usr/bin/python
+# !/usr/bin/python
 import os
 import numpy as np
 import pandas as pd
@@ -11,7 +11,7 @@ config.read('../../configs/crop_nodules_3d.ini')
 
 PREPROCESSED_PATH = config.get('remote', 'PREPROCESSED_PATH')
 
-hdf5_file_filename = '64x64x64-patch.hdf5'
+hdf5_file_filename = '32x32x32-patch.hdf5'
 path_to_hdf5 = PREPROCESSED_PATH + hdf5_file_filename
 hdf5_file = h5py.File(path_to_hdf5, 'r') # open in read-only mode
 
@@ -22,5 +22,11 @@ print('Size of hdf5 file: {:.3f} GB'.format(file_size/2.0**30))
 print('Dataset info and some real data:')
 for name in [key for key in hdf5_file.keys()]:
     print(name)
-    print(hdf5_file[name]) #name + shape + dtype of the dataset (refer back to extract_patch.py)
-    print(hdf5_file[name][0:2]) #get the first 2 rows of the dataset
+    print(hdf5_file[name])
+    # print(hdf5_file[name][0:2])
+
+idx_class0 = np.where(hdf5_file["output"][:,0] == 0)[0]
+idx_class1 = np.where(hdf5_file["output"][:,0] == 1)[0]
+
+print('Class 0 count **: {}'.format( len(idx_class0) ) )
+print('Class 1 count ** : {}'.format( len(idx_class1) ) )
