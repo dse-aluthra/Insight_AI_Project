@@ -298,3 +298,4 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file:
                         callbacks=[tb_log])
 
     plot_loss_accuracy(model_ret)
+    model.save(CHECKPOINT_FILENAME)
