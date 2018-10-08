@@ -1,13 +1,6 @@
 # CUDA CUDA_VISIBLE_DEVICES should be specified before any Keras/TF import
 # which GPU(s) to be used
 import os
-os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"]="0,1,2,3,4,5,6,7"
-
-from tensorflow.python.client import device_lib
-print ("## List of available Local Devices: ", device_lib.list_local_devices() )
-
-NUM_GPUS = 8
 import argparse
 from configparser import ConfigParser
 import numpy as np
@@ -22,21 +15,28 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
+
+from tensorflow.python.client import device_lib
+print ("Available Local Devices List: ", device_lib.list_local_devices() )
 
 config = ConfigParser()
 config.read('../../configs/model.ini') #local just for now (need if - else for AWS)
 
-GPUID = config.get('training', 'GPUID')
+NUM_GPUS = config.get('training', 'NUM_GPUS')
 DATA_DIR = config.get('training', 'DATA_DIR')
 HOLDOUT_SUBSET = config.get('training', 'HOLDOUT')
 BATCH_SIZE = config.get('training', 'BATCH_SIZE')
+EPOCHS = config.get('training', 'EPOCHS')
+
 hdf5_file_filename = '32x32x32-patch.hdf5'
 path_to_hdf5 = DATA_DIR + hdf5_file_filename
 
 TB_LOG_DIR = "./tb_3D_logs"
 
 # Save Keras model to this file
-CHECKPOINT_FILENAME = "./resnet_3d_32_32_32_HOLDOUT{}".format(HOLDOUT_SUBSET) + time.strftime("_%Y%m%d_%H%M%S") + ".hdf5"
+CHECKPOINT_FILENAME = "./model_noGPU_3d_32_32_32_HOLDOUT{}".format(HOLDOUT_SUBSET) + time.strftime("_%Y%m%d_%H%M%S") + ".hdf5"
 print("CHECKPOINT_FILENAME : ", CHECKPOINT_FILENAME)
 
 # Finding to which devices operations and tensors are assigned to so using log_device_placement=True
@@ -53,18 +53,6 @@ def get_class_idx(hdf5_file, classid = 0):
     '''
     Get the indices for the class classid and valid for training
     '''
-#     # 1. Find indices from class classid
-#     idx_class = np.where( (hdf5_file['output'][:,0] == classid) )[0]
-
-#     # 2. Find indices that are not excluded from training
-#     idx_notraining = np.where(hdf5_file["notrain"][:,0] == 1)[0]
-
-#     # 1. Find indices from class classid
-#     idx_class = np.where( (hdf5_file['output'][:,0] == classid) )[0]
-
-#     # 2. Find indices that are not excluded from training
-#     idx_notraining = np.where(hdf5_file["notrain"][:,0] == 1)[0]
-
      # 1. Find indices from class classid
     idx_class = np.where( (hdf5_file['output'][:,0] == classid) )[0]
 
@@ -242,6 +230,23 @@ def get_idx_for_onesubset(hdf5_file, subset=0):
 
     return idx
 
+def plot_loss_accuracy(mdl):
+
+    H = mdl.history
+    N = np.arange(0, len(H["loss"]))
+    plt.style.use("ggplot")
+    plt.figure()
+    plt.plot(N, H["loss"], label="train_loss")
+    plt.plot(N, H["val_loss"], label="test_loss")
+    plt.plot(N, H["acc"], label="train_acc")
+    plt.plot(N, H["val_acc"], label="test_acc")
+    plt.title(" Resnet3d Model Training on Volumetric data (No GPU's) ")
+    plt.xlabel("Epoch #")
+    plt.ylabel("Loss/Accuracy")
+    plt.legend()
+    plt.savefig("no_GPU_fig.png")
+    plt.close()
+
 #### MAIN  ######
 with h5py.File(path_to_hdf5, 'r') as hdf5_file:
 
@@ -257,15 +262,13 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file:
     print("The datasets within the HDF5 file are:\n {}".format(list(hdf5_file.values())))
 
     input_shape = tuple(list(hdf5_file["input"].attrs["lshape"]))
-    # batch_size = args.batchsize   # Batch size to use
     batch_size = int(BATCH_SIZE)
     print ("Input shape of tensor = {}".format(input_shape))
     print ("Batch Size  = {}".format(batch_size))
 
-
-    with tf.device("/cpu:0"):
-        model = Resnet3DBuilder.build_resnet_18((32, 32, 32, 1), 1)  # (input tensor shape, number of outputs)
-        # model.compile(optimizer='adam',loss='binary_crossentropy', metrics=['accuracy'])
+    # with tf.device("/cpu:0"):
+    model = Resnet3DBuilder.build_resnet_18((32, 32, 32, 1), 1)  # (input tensor shape, number of outputs)
+    model.compile(optimizer='adam',loss='binary_crossentropy', metrics=['accuracy'])
 
     tb_log = keras.callbacks.TensorBoard(log_dir=TB_LOG_DIR,
                                 histogram_freq=0,
@@ -283,37 +286,15 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file:
                                                    save_best_only=True)
 
     print(model.summary())
-    model = multi_gpu_model(model, gpus=NUM_GPUS)
-    # AL - added for compile model issue
-    model.compile(optimizer='adam',loss='binary_crossentropy', metrics=['accuracy'])
-    print ('### Model parallelization  with {} GPUs OK'.format(NUM_GPUS ))
     validation_batch_size = batch_size
 
     train_generator = generate_data(hdf5_file, batch_size, subset=HOLDOUT_SUBSET, validation=False)
     validation_generator = generate_data(hdf5_file, validation_batch_size, subset=HOLDOUT_SUBSET, validation=True)
 
     model_ret = model.fit_generator(train_generator,
-                        steps_per_epoch=num_rows//batch_size, epochs=8,
+                        steps_per_epoch=num_rows//batch_size, epochs= int(EPOCHS),
                         validation_data = validation_generator,
-                        # validation_steps = 1000,
                         validation_steps = 200,
                         callbacks=[tb_log])
-                        # callbacks=[tb_log, checkpointer])
 
-
-    H = model_ret.history
-    # plot the training loss and accuracy
-    N = np.arange(0, len(H["loss"]))
-    plt.style.use("ggplot")
-    plt.figure()
-    plt.plot(N, H["loss"], label="train_loss")
-    plt.plot(N, H["val_loss"], label="test_loss")
-    plt.plot(N, H["acc"], label="train_acc")
-    plt.plot(N, H["val_acc"], label="test_acc")
-    plt.title(" Resnet3d Training on Volumetric data ")
-    plt.xlabel("Epoch #")
-    plt.ylabel("Loss/Accuracy")
-    plt.legend()
-
-    plt.savefig("fig_path.png")
-    plt.close()
+    plot_loss_accuracy(model_ret)
