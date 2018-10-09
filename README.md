@@ -1,17 +1,17 @@
 # Scalable Training 3D Medical-Imaging
 Develop techniques for Scalable Training for 3D Medical Imaging, entailing Distributing-Computing approach by doing Data & Model Parallelization to expedite training process.
-https://platform.insightdata.com/projects/scalable-training-3d-medical-imaging
+- https://platform.insightdata.com/projects/scalable-training-3d-medical-imaging
 
 
 ## Project Folder Structure:
-- **./src** : /model
-              /preprocess
+- **./src** : /model;
+              /preprocess;
               /notebooks
-- **./configs** : /model.insi
+- **./configs** : /model.ini;
                   /crop_nodules_3d.ini
-- **data** :  /raw
+- **data** :  /raw;
               /preprocessed
-- **build** : /create_conda_env.sh
+- **build** : /create_conda_env.sh;
               /environment.yml
 
 ## Setup
@@ -43,20 +43,28 @@ git checkout -b $branch_name
 - SITK (pip install sitk)
 - gpustat (pip install gpustat)
 - dstat (pip install dstat)
+- psutils (pip install psutils)
 - HDF5 i.e h5py (pip install h5py)
+- Resnet3d  (pip install git+https://github.com/JihongJu/keras-resnet3d.git)
 
 ## Build Environment
- - Run ./build/create_conda_env.sh (which read environment.yml) to create the conda environment for preprocessing raw data.
+ - Run ./build/create_conda_env.sh (which read environment.yml) to create the conda environment for preprocessing raw data
 
 ## Configs
-- Path to raw data, supporting configuration files and destination preprocess folder can be specified else default values aligned to existing folder structure from git repo will be used in  ./configs/crop_nodules_3d.ini
+- ./configs/crop_nodules_3d.ini
+- - Configuration files to specify folder path to raw data, supporting configuration files and destination, else default values aligned to existing folder structure from git repo will be used.
 
-## Execuiting the scripts
-- This will preprocess the raw data and create HDF5 file.
-  python ./src/preprocess/crop_nodules_3d.py
+- ./configs/model.ini
+- - Configuration files used by the model-training scripts
+- -cParameters like BATCH_SIZE, GPUID, path to HDF5 file can be specify (else default values are considered)
 
-- This will initiate the training process for the model
-   python ./src/model/modelTrng_No_GPU.py
+## Executing the scripts
+- > python ./src/preprocess/crop_nodules_3d.py
+- This script will preprocess the raw data and create HDF5 file.
+
+- > python ./src/model/modelTrng_No_GPU.py
+- This will initiate the training process for the model with no GPU usage
+
 
 - This will initiate the training process for the model
       python ./src/model/modelTrng_with_GPU.py
