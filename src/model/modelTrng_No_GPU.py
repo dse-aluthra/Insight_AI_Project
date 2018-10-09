@@ -266,7 +266,6 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file:
     print ("Input shape of tensor = {}".format(input_shape))
     print ("Batch Size  = {}".format(batch_size))
 
-    # with tf.device("/cpu:0"):
     model = Resnet3DBuilder.build_resnet_18((32, 32, 32, 1), 1)  # (input tensor shape, number of outputs)
     model.compile(optimizer='adam',loss='binary_crossentropy', metrics=['accuracy'])
 

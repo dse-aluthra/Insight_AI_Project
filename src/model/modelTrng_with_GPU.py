@@ -1,7 +1,7 @@
 # CUDA CUDA_VISIBLE_DEVICES should be specified before any Keras/TF import
 # which GPU(s) to be used
 import os
-NUM_GPUS = 8
+NUM_GPUS = 4
 import argparse
 from configparser import ConfigParser
 import numpy as np
@@ -17,7 +17,7 @@ from keras.utils.training_utils import multi_gpu_model
 from resnet3d import Resnet3DBuilder
 
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
-os.environ["CUDA_VISIBLE_DEVICES"]="0,1,2,3,4,5,6,7"
+os.environ["CUDA_VISIBLE_DEVICES"]="0,1,2,3"
 
 from tensorflow.python.client import device_lib
 print ("Listing Local devices : {} ".format(device_lib.list_local_devices() ) )
@@ -52,18 +52,6 @@ def get_class_idx(hdf5_file, classid = 0):
     '''
     Get the indices for the class classid and valid for training
     '''
-#     # 1. Find indices from class classid
-#     idx_class = np.where( (hdf5_file['output'][:,0] == classid) )[0]
-
-#     # 2. Find indices that are not excluded from training
-#     idx_notraining = np.where(hdf5_file["notrain"][:,0] == 1)[0]
-
-#     # 1. Find indices from class classid
-#     idx_class = np.where( (hdf5_file['output'][:,0] == classid) )[0]
-
-#     # 2. Find indices that are not excluded from training
-#     idx_notraining = np.where(hdf5_file["notrain"][:,0] == 1)[0]
-
      # 1. Find indices from class classid
     idx_class = np.where( (hdf5_file['output'][:,0] == classid) )[0]
 
@@ -198,7 +186,6 @@ def get_batch(hdf5_file, batch_size=50, exclude_subset=0):
 
     return imgs, classes
 
-
 def get_idx_for_onesubset(hdf5_file, subset=0):
     '''
     Get the indices for one subset to be used in testing/validation
@@ -226,7 +213,7 @@ def generate_data(hdf5_file, batch_size=50, subset=0, validation=False):
     input_shape = (batch_size, 32,32,32,1)
 
     print("Generater initiated \n")
-    batch_counter = 0
+    # batch_counter = 0
     while True:
 
         random_idx = get_random_idx(idx_master, batch_size)
@@ -234,15 +221,13 @@ def generate_data(hdf5_file, batch_size=50, subset=0, validation=False):
         imgs = imgs.reshape(input_shape)
         imgs = np.swapaxes(imgs, 1, 3)
 
-        if not validation:  # Training need augmentation. Validation does not.
-            ## Need to augment
-            imgs = augment_data(imgs)
+        # if not validation:  # Training need augmentation. Validation does not.
+        #     ## Need to augment
+        #     imgs = augment_data(imgs)
 
         classes = hdf5_file["output"][random_idx, 0]
-
-        print("Generator yielded then batch: {}".format(batch_counter))
-        batch_counter += 1
-
+        # print("Generator yielded then batch: {}".format(batch_counter))
+        # batch_counter += 1
         yield imgs, classes
 
 def plot_loss_accuracy(mdl):
@@ -259,7 +244,7 @@ def plot_loss_accuracy(mdl):
     plt.xlabel("Epoch #")
     plt.ylabel("Loss/Accuracy")
     plt.legend()
-    plt.savefig("with_8GPU_fig.png")
+    plt.savefig("with_GPUs_fig.png")
     plt.close()
 
 #### MAIN  ######
@@ -281,8 +266,8 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file: # open in read-only mode
     print ("Input shape of tensor = {}".format(input_shape))
     print ("Batch Size  = {}".format(batch_size))
 
-    with tf.device("/cpu:0"):
-        model = Resnet3DBuilder.build_resnet_18((32, 32, 32, 1), 1)  # (input tensor shape, number of outputs)
+    # with tf.device("/cpu:0"):
+    model = Resnet3DBuilder.build_resnet_18((32, 32, 32, 1), 1)  # (input tensor shape, number of outputs)
 
     tb_log = keras.callbacks.TensorBoard(log_dir=TB_LOG_DIR,
                                 histogram_freq=0,
@@ -315,4 +300,4 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file: # open in read-only mode
                         callbacks=[tb_log])
 
     plot_loss_accuracy(model_ret)
-    parallel_model.save(CHECKPOINT_FILENAME)
+    model.save(CHECKPOINT_FILENAME)
