@@ -21,14 +21,28 @@ os.environ["CUDA_VISIBLE_DEVICES"]="0"
 from tensorflow.python.client import device_lib
 print ("Available Local Devices List: ", device_lib.list_local_devices() )
 
+parser = argparse.ArgumentParser(description='Model training script with no GPU ',add_help=True)
+parser.add_argument('-epochs',
+					action="store",
+					dest="EPOCHS",
+					default=4,
+					help='Number of Epochs')
+parser.add_argument('-batch',
+					type=int,
+					action="store",
+					dest="BATCH_SIZE",
+					default=64,
+					help='Size of Batch size for training default = 64')
+
+args = parser.parse_args()
+EPOCHS = args.EPOCHS
+BATCH_SIZE = args.BATCH_SIZE
+
 config = ConfigParser()
 config.read('../../configs/model.ini') #local just for now (need if - else for AWS)
 
-NUM_GPUS = config.get('training', 'NUM_GPUS')
 DATA_DIR = config.get('training', 'DATA_DIR')
 HOLDOUT_SUBSET = config.get('training', 'HOLDOUT')
-BATCH_SIZE = config.get('training', 'BATCH_SIZE')
-EPOCHS = config.get('training', 'EPOCHS')
 
 hdf5_file_filename = '32x32x32-patch.hdf5'
 path_to_hdf5 = DATA_DIR + hdf5_file_filename
@@ -253,12 +267,18 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file:
     print("Valid hdf5 file in 'read' mode: " + str(hdf5_file))
     file_size = os.path.getsize(path_to_hdf5)
     print('Size of hdf5 file: {:.3f} GB'.format(file_size/2.0**30))
-
+    # checking HDF5 file for Datasets
+    data_set_names = hdf5_file.keys()
+    if ( "input" not in data_set_names):
+            raise ValueError("Missing required dataset {} in HDF5 file ".format("'input'"))
+    if ( "output" not in data_set_names):
+            raise ValueError("Missing required dataset {} in HDF5 file ".format("'output'"))
+    if ( "subsets" not in data_set_names):
+            raise ValueError("Missing required dataset {} in HDF5 file ".format("'subsets'"))
     num_rows = hdf5_file['input'].shape[0]
     print("There are {} images in the dataset.".format(num_rows))
     print('Class 0 count: {}'.format( len( np.where(hdf5_file["output"][:,0] == 0)[0] ) ) )
     print('Class 1 count: {}'.format( len( np.where(hdf5_file["output"][:,0] == 1)[0] ) ) )
-
     print("The datasets within the HDF5 file are:\n {}".format(list(hdf5_file.values())))
 
     input_shape = tuple(list(hdf5_file["input"].attrs["lshape"]))
@@ -266,6 +286,7 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file:
     print ("Input shape of tensor = {}".format(input_shape))
     print ("Batch Size  = {}".format(batch_size))
 
+    # with tf.device("/cpu:0"):
     model = Resnet3DBuilder.build_resnet_18((32, 32, 32, 1), 1)  # (input tensor shape, number of outputs)
     model.compile(optimizer='adam',loss='binary_crossentropy', metrics=['accuracy'])
 
@@ -294,7 +315,6 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file:
                         steps_per_epoch=num_rows//batch_size, epochs= int(EPOCHS),
                         validation_data = validation_generator,
                         validation_steps = 200,
-                        callbacks=[tb_log])
+                        callbacks=[tb_log, checkpointer])
 
     plot_loss_accuracy(model_ret)
-    model.save(CHECKPOINT_FILENAME)
