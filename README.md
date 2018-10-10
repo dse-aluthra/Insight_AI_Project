@@ -51,19 +51,15 @@ git checkout -b $branch_name
 ```
 
 ## Requisites
-- Python 3.x
-- Tensorflow 1.10
-- Keras
-- Numpy
 - SITK (pip install sitk)
 - gpustat (pip install gpustat)
 - dstat (pip install dstat)
 - psutils (pip install psutils)
-- HDF5 i.e h5py (pip install h5py)
 - Resnet3d  (pip install git+https://github.com/JihongJu/keras-resnet3d.git)
 
 ## Build Environment
- - Run ./build/create_conda_env.sh (which read environment.yml) to create the conda environment for preprocessing raw data
+ - pip install -r requirements.txt
+  - Read requirements.txt  create the conda environment for preprocessing raw data and excuting the python scripts.
 
 ## Configs
 - ./configs/crop_nodules_3d.ini
