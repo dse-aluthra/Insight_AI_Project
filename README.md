@@ -4,30 +4,26 @@ Develop techniques for Scalable Training for 3D Medical Imaging, entailing Distr
 
 
 ## Project Folder Structure:
-.
-├── ...
+
 ├── src                    
 │   ├── model          
 │   ├── preprocess         
 │   └── notebooks                
 └── ...
 
-.
-├── ...
+
 ├── configs                    
 │   ├── model.ini          
 │   ├── crop_nodules_3d.ini                    
 └── ...
 
-.
-├── ...
+
 ├── data                    
 │   ├── raw          
 │   ├── preprocessed                   
 └── ...
 
-.
-├── ...
+
 ├── build                    
 │   ├── create_conda_env.sh          
 │   ├── environment.yml                   
