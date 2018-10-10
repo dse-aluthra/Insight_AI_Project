@@ -27,6 +27,9 @@ for name in [key for key in hdf5_file.keys()]:
 
 idx_class0 = np.where(hdf5_file["output"][:,0] == 0)[0]
 idx_class1 = np.where(hdf5_file["output"][:,0] == 1)[0]
+print('Class 0 count : {}'.format( len(idx_class0) ) )
+print('Class 1 count : {}'.format( len(idx_class1) ) )
 
-print('Class 0 count **: {}'.format( len(idx_class0) ) )
-print('Class 1 count ** : {}'.format( len(idx_class1) ) )
+
+# print('Class 0 count : {}'.format( len( np.where(hdf5_file["output"][:,0] == 0)[0] ) ) )
+# print('Class 1 count : {}'.format( len( np.where(hdf5_file["output"][:,0] == 1)[0] ) ) )
