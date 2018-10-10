@@ -1,0 +1,11 @@
+h5py==2.7.1
+pandas==0.22.0
+matplotlib==2.2.2
+tensorflow-gpu==1.7.0
+numpy==1.14.2
+python==3.6.2
+tensorflow-gpu==1.4.1
+tensorflow-tensorboard==0.1.8
+keras==2.1.2
+numpy==1.13.1
+hdf5==1.10.1

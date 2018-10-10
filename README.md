@@ -1,106 +1,79 @@
-# Insight_Project_Framework
-Framework for machine learning projects at Insight Data Science. 
+# Scalable Training 3D Medical-Imaging
+Develop techniques for Scalable Training for 3D Medical Imaging, entailing Distributing-Computing approach by doing Data & Model Parallelization to expedite training process.
+- https://platform.insightdata.com/projects/scalable-training-3d-medical-imaging
 
-## Motivation for this project format:
-- **src** : Put all source code for production within structured directory
-- **tests** : Put all source code for testing in an easy to find location
-- **configs** : Enable modification of all preset variables within single directory (consisting of one or many config files for separate tasks)
-- **data** : Include example a small amount of data in the Github repository so tests can be run to validate installation
-- **build** : Include scripts that automate building of a standalone environment
-- **static** : Any images or content to include in the README or web framework if part of the pipeline
+
+## Project Folder Structure:
+
+├── src                    
+│   ├── model          
+│   ├── preprocess         
+│   └── notebooks                
+└── ...
+
+
+├── configs                    
+│   ├── model.ini          
+│   ├── crop_nodules_3d.ini                    
+└── ...
+
+
+├── data                    
+│   ├── raw          
+│   ├── preprocessed                   
+└── ...
+
+
+├── build                    
+│   ├── create_conda_env.sh          
+│   ├── environment.yml                   
+└── ...
 
 ## Setup
 Clone repository and update python path
 ```
-repo_name=Insight_Project_Framework # URL of your new repository
-username=mrubash1 # Username for your personal github account
+repo_name=https://github.com/dse-aluthra/Insight_AI_Project
+username=dse-aluthra
+#Clone master
 git clone https://github.com/$username/$repo_name
 cd $repo_name
-echo "export $repo_name=${PWD}" >> ~/.bash_profile
-echo "export PYTHONPATH=$repo_name/src:${PYTHONPATH}" >> ~/.bash_profile
-source ~/.bash_profile
+
+#Clone branch
+branch_id=model-parallelize
+git clone -b $branch_id  https://github.com/$username/$repo_name
+
 ```
 Create new development branch and switch onto it
 ```
-branch_name=dev-readme_requisites-20180905 # Name of development branch, of the form 'dev-feature_name-date_of_creation'}}
+branch_name=dev-readme_requisites-20180917
+# Name branch, of the form 'dev-feature_name-date_of_creation'}}
 git checkout -b $branch_name
-git push origin $branch_name
 ```
 
 ## Requisites
-- List all packages and software needed to build the environment
-- This could include cloud command line tools (i.e. gsutil), package managers (i.e. conda), etc.
-```
-# Example
-- A
-- B
-- C
-```
+- SITK (pip install sitk)
+- gpustat (pip install gpustat)
+- dstat (pip install dstat)
+- psutils (pip install psutils)
+- Resnet3d  (pip install git+https://github.com/JihongJu/keras-resnet3d.git)
 
 ## Build Environment
-- Include instructions of how to launch scripts in the build subfolder
-- Build scripts can include shell scripts or python setup.py files
-- The purpose of these scripts is to build a standalone environment, for running the code in this repository
-- The environment can be for local use, or for use in a cloud environment
-- If using for a cloud environment, commands could include CLI tools from a cloud provider (i.e. gsutil from Google Cloud Platform)
-```
-# Example
-
-# Step 1
-# Step 2
-```
+ - pip install -r requirements.txt
+  - Read requirements.txt  create the conda environment for preprocessing raw data and excuting the python scripts.
 
 ## Configs
-- We recommond using either .yaml or .txt for your config files, not .json
-- **DO NOT STORE CREDENTIALS IN THE CONFIG DIRECTORY!!**
-- If credentials are needed, use environment variables or HashiCorp's [Vault](https://www.vaultproject.io/)
+- ./configs/crop_nodules_3d.ini
+  - This configuration file specifies folder path to raw data, supporting configuration files and destination, else default values aligned to existing folder structure from git repo will be used.
 
+- ./configs/model.ini
+  - This configuration file is used by the model-training scripts. Parameters like BATCH_SIZE, GPUID, path to HDF5 file can be specified (else default values are considered).
 
-## Test
-- Include instructions for how to run all tests after the software is installed
-```
-# Example
+## Executing the scripts
+- > python ./src/preprocess/crop_nodules_3d.py
+  - This script will preprocess the raw data and create HDF5 file.
 
-# Step 1
-# Step 2
-```
+- > python ./src/model/modelTrng_No_GPU.py
+  - This will initiate the training process for the model with no GPU usage
 
-## Run Inference
-- Include instructions on how to run inference
-- i.e. image classification on a single image for a CNN deep learning project
-```
-# Example
-
-# Step 1
-# Step 2
-```
-
-## Build Model
-- Include instructions of how to build the model
-- This can be done either locally or on the cloud
-```
-# Example
-
-# Step 1
-# Step 2
-```
-
-## Serve Model
-- Include instructions of how to set up a REST or RPC endpoint 
-- This is for running remote inference via a custom model
-```
-# Example
-
-# Step 1
-# Step 2
-```
-
-## Analysis
-- Include some form of EDA (exploratory data analysis)
-- And/or include benchmarking of the model and results
-```
-# Example
-
-# Step 1
-# Step 2
-```
+- > python ./src/model/modelTrng_with_GPU.py
+  - This will initiate the training process for the model with GPU usage
