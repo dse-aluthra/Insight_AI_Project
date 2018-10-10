@@ -4,15 +4,34 @@ Develop techniques for Scalable Training for 3D Medical Imaging, entailing Distr
 
 
 ## Project Folder Structure:
-- **./src** : /model;
-              /preprocess;
-              /notebooks
-- **./configs** : /model.ini;
-                  /crop_nodules_3d.ini
-- **data** :  /raw;
-              /preprocessed
-- **build** : /create_conda_env.sh;
-              /environment.yml
+.
+├── ...
+├── src                    
+│   ├── model          
+│   ├── preprocess         
+│   └── notebooks                
+└── ...
+
+.
+├── ...
+├── configs                    
+│   ├── model.ini          
+│   ├── crop_nodules_3d.ini                    
+└── ...
+
+.
+├── ...
+├── data                    
+│   ├── raw          
+│   ├── preprocessed                   
+└── ...
+
+.
+├── ...
+├── build                    
+│   ├── create_conda_env.sh          
+│   ├── environment.yml                   
+└── ...
 
 ## Setup
 Clone repository and update python path
@@ -52,19 +71,17 @@ git checkout -b $branch_name
 
 ## Configs
 - ./configs/crop_nodules_3d.ini
-- - Configuration files to specify folder path to raw data, supporting configuration files and destination, else default values aligned to existing folder structure from git repo will be used.
+  - This configuration file specifies folder path to raw data, supporting configuration files and destination, else default values aligned to existing folder structure from git repo will be used.
 
 - ./configs/model.ini
-- - Configuration files used by the model-training scripts
-- -cParameters like BATCH_SIZE, GPUID, path to HDF5 file can be specify (else default values are considered)
+  - This configuration file is used by the model-training scripts. Parameters like BATCH_SIZE, GPUID, path to HDF5 file can be specified (else default values are considered).
 
 ## Executing the scripts
 - > python ./src/preprocess/crop_nodules_3d.py
-- This script will preprocess the raw data and create HDF5 file.
+  - This script will preprocess the raw data and create HDF5 file.
 
 - > python ./src/model/modelTrng_No_GPU.py
-- This will initiate the training process for the model with no GPU usage
+  - This will initiate the training process for the model with no GPU usage
 
-
-- This will initiate the training process for the model
-      python ./src/model/modelTrng_with_GPU.py
+- > python ./src/model/modelTrng_with_GPU.py
+  - This will initiate the training process for the model with GPU usage
