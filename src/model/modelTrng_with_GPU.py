@@ -22,20 +22,35 @@ os.environ["CUDA_VISIBLE_DEVICES"]="0,1,2,3"
 from tensorflow.python.client import device_lib
 print ("Listing Local devices : {} ".format(device_lib.list_local_devices() ) )
 
+parser = argparse.ArgumentParser(description='Model training script with GPU ',add_help=True)
+parser.add_argument('-epochs',
+					action="store",
+					dest="EPOCHS",
+					default=4,
+					help='Number of Epochs default = 4')
+parser.add_argument('-batch',
+					type=int,
+					action="store",
+					dest="BATCH_SIZE",
+					default=64,
+					help='Size of Batch size for training default = 64')
+
+args = parser.parse_args()
+EPOCHS = args.EPOCHS
+BATCH_SIZE = args.BATCH_SIZE
+
 config = ConfigParser()
 config.read('../../configs/model.ini') #local just for now (need if - else for AWS)
 
 DATA_DIR = config.get('training', 'DATA_DIR')
 HOLDOUT_SUBSET = config.get('training', 'HOLDOUT')
-BATCH_SIZE = int(config.get('training', 'BATCH_SIZE'))
-EPOCHS = int(config.get('training', 'EPOCHS'))
 
 hdf5_file_filename = '32x32x32-patch.hdf5'
 path_to_hdf5 = DATA_DIR + hdf5_file_filename
 TB_LOG_DIR = "./tb_3D_logs"
 
 # Save Keras model to this file
-CHECKPOINT_FILENAME = "./with_GPU8_resnet_3d_32_32_32_HOLDOUT{}".format(HOLDOUT_SUBSET) + time.strftime("_%Y%m%d_%H%M%S") + ".hdf5"
+CHECKPOINT_FILENAME = "./gpu_resnet_3d_32_32_32_HOLDOUT{}".format(HOLDOUT_SUBSET) + time.strftime("_%Y%m%d_%H%M%S") + ".hdf5"
 print("CHECKPOINT_FILENAME : ", CHECKPOINT_FILENAME)
 
 # Finding to which devices operations and tensors are assigned to so using log_device_placement=True
@@ -240,7 +255,7 @@ def plot_loss_accuracy(mdl):
     plt.plot(N, H["val_loss"], label="test_loss")
     plt.plot(N, H["acc"], label="train_acc")
     plt.plot(N, H["val_acc"], label="test_acc")
-    plt.title(" Resnet3d Model Training on Volumetric data (No GPU's) ")
+    plt.title(" Resnet3d Model Training on Volumetric data with GPU's ")
     plt.xlabel("Epoch #")
     plt.ylabel("Loss/Accuracy")
     plt.legend()
@@ -253,6 +268,14 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file: # open in read-only mode
     print("Valid hdf5 file in 'read' mode: " + str(hdf5_file))
     file_size = os.path.getsize(path_to_hdf5)
     print('Size of hdf5 file: {:.3f} GB'.format(file_size/2.0**30))
+    # checking HDF5 file for Datasets
+    data_set_names = hdf5_file.keys()
+    if ( "input" not in data_set_names):
+            raise ValueError("Missing required dataset {} in HDF5 file ".format("'input'"))
+    if ( "output" not in data_set_names):
+            raise ValueError("Missing required dataset {} in HDF5 file ".format("'output'"))
+    if ( "subsets" not in data_set_names):
+            raise ValueError("Missing required dataset {} in HDF5 file ".format("'subsets'"))
 
     num_rows = hdf5_file['input'].shape[0]
     print("There are {} images in the dataset.".format(num_rows))
@@ -278,13 +301,10 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file: # open in read-only mode
                                 embeddings_freq=0,
                                 embeddings_layer_names=None,
                                 embeddings_metadata=None)
-    checkpointer = keras.callbacks.ModelCheckpoint(filepath=CHECKPOINT_FILENAME,
-                                                   monitor="val_loss",
-                                                   verbose=1,
-                                                   save_best_only=True)
+
     print(model.summary())
     parallel_model = multi_gpu_model(model, gpus=NUM_GPUS)
-    # AL - added compile model issue
+    # added to resolve compile model issue
     parallel_model.compile(optimizer='adam',loss='binary_crossentropy', metrics=['accuracy'])
 
     print ('Model deployed to {} GPUs OK'.format(NUM_GPUS ))
@@ -294,7 +314,7 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file: # open in read-only mode
     validation_generator = generate_data(hdf5_file, validation_batch_size, subset=HOLDOUT_SUBSET, validation=True)
 
     model_ret = parallel_model.fit_generator(train_generator,
-                        steps_per_epoch=num_rows//batch_size, epochs=EPOCHS,
+                        steps_per_epoch=num_rows//batch_size, epochs=int(EPOCHS),
                         validation_data = validation_generator,
                         validation_steps = 200,
                         callbacks=[tb_log])
