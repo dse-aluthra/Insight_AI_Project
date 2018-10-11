@@ -308,6 +308,12 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file: # open in read-only mode
     parallel_model.compile(optimizer='adam',loss='binary_crossentropy', metrics=['accuracy'])
 
     print ('Model deployed to {} GPUs OK'.format(NUM_GPUS ))
+    checkpointer = keras.callbacks.ModelCheckpoint(filepath=CHECKPOINT_FILENAME,
+                                                   monitor="val_loss",
+                                                   verbose=1,
+                                                   save_best_only=True)
+
+
     validation_batch_size = int(batch_size)
 
     train_generator = generate_data(hdf5_file, batch_size, subset=HOLDOUT_SUBSET, validation=False)
@@ -317,7 +323,7 @@ with h5py.File(path_to_hdf5, 'r') as hdf5_file: # open in read-only mode
                         steps_per_epoch=num_rows//batch_size, epochs=int(EPOCHS),
                         validation_data = validation_generator,
                         validation_steps = 200,
-                        callbacks=[tb_log])
+                        callbacks=[tb_log, checkpointer])
 
-    plot_loss_accuracy(model_ret)
-    model.save(CHECKPOINT_FILENAME)
+    # plot_loss_accuracy(model_ret)
+    # model.save(CHECKPOINT_FILENAME)
