@@ -69,6 +69,11 @@ git checkout -b $branch_name
   - Model training with GPU usage
 
 ## Analysis & Results
+- Following table shows the time comparison between the single and multiple GPU instances on which engineering efforts.  
+<p align='center'>
+  <img src='./images/analysis.png' width='640'/>
+</p>
+
 - Following graph illustrates the GPU usage in short window of time, it's obervsed that there is consistent pattern as high and low usage among the 4 GPU's used. The analysis was conducted on 8 GPU instance and only first 4 GPU's are used for processing and analysis. The goal is to uplift the lows/dips and exploit the GPU's processing power by data and model parallelization.
 
 <p align='center'>
