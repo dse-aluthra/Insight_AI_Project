@@ -34,8 +34,8 @@ Clone repository and update python path
 repo_name=https://github.com/dse-aluthra/Insight_AI_Project
 username=dse-aluthra
 # Clone master
-git clone https://github.com/$username/$repo_name
-cd $repo_name
+git clone $repo_name
+cd Insight_AI_Project
 
 # Clone branch
 branch_id=model-parallelize
@@ -73,7 +73,6 @@ git checkout -b $branch_name
 <p align='center'>
   <img src='./images/analysis.png' width='640'/>
 </p>
-
 - Following graph illustrates the GPU usage in short window of time, it's obervsed that there is consistent pattern as high and low usage among the 4 GPU's used. The analysis was conducted on 8 GPU instance and only first 4 GPU's are used for processing and analysis. The goal is to uplift the lows/dips and exploit the GPU's processing power by data and model parallelization.
 
 <p align='center'>
