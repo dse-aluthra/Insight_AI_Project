@@ -258,7 +258,7 @@ def plot_loss_accuracy(mdl):
     plt.xlabel("Epoch #")
     plt.ylabel("Loss/Accuracy")
     plt.legend()
-    plt.savefig("no_GPU_fig.png")
+    plt.savefig("with_GPU_fig.png")
     plt.close()
 
 #### MAIN  ######
