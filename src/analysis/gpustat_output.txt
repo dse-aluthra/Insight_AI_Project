@@ -1,0 +1,450 @@
+ip-172-31-25-225  Thu Oct 11 04:16:20 2018
+[0] Tesla K80        | 49'C,  51 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  85 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  49 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  95 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:20 2018
+[0] Tesla K80        | 49'C,   7 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 59'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 35'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:21 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 60'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 59'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:21 2018
+[0] Tesla K80        | 49'C,  18 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  52 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,  16 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  48 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:22 2018
+[0] Tesla K80        | 50'C,  87 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  70 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  75 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  77 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:22 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 59'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:23 2018
+[0] Tesla K80        | 49'C,  76 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  69 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  76 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  74 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:23 2018
+[0] Tesla K80        | 49'C,  57 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   1 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  28 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   1 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:24 2018
+[0] Tesla K80        | 49'C,  16 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:24 2018
+[0] Tesla K80        | 49'C,  76 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  70 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  75 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  77 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:25 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 59'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:25 2018
+[0] Tesla K80        | 49'C,  74 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  15 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 59'C,  10 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:26 2018
+[0] Tesla K80        | 49'C,  65 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  89 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,  56 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  88 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:26 2018
+[0] Tesla K80        | 49'C,  19 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  30 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  68 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  38 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:27 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   2 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:27 2018
+[0] Tesla K80        | 49'C,  73 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  84 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  62 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  91 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:28 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 59'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:28 2018
+[0] Tesla K80        | 49'C,  51 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 59'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:29 2018
+[0] Tesla K80        | 49'C,  80 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  50 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   9 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  41 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:29 2018
+[0] Tesla K80        | 50'C,  59 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  82 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  63 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  89 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:30 2018
+[0] Tesla K80        | 49'C,  21 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:30 2018
+[0] Tesla K80        | 49'C,  48 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  69 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  76 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  74 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:31 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   6 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  39 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  13 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:31 2018
+[0] Tesla K80        | 49'C,  54 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  88 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  32 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  54 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:32 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  15 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   2 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:32 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 59'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:33 2018
+[0] Tesla K80        | 50'C,  91 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  51 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  90 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  57 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:33 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:34 2018
+[0] Tesla K80        | 50'C,  91 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 62'C,  41 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  81 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  49 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:34 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:35 2018
+[0] Tesla K80        | 49'C,  77 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  25 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  20 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:35 2018
+[0] Tesla K80        | 49'C,  63 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  87 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,  57 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  91 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:36 2018
+[0] Tesla K80        | 49'C,  17 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   8 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  46 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  15 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:36 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 59'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:37 2018
+[0] Tesla K80        | 49'C,  77 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  26 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  82 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  22 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:37 2018
+[0] Tesla K80        | 49'C,  65 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  88 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  36 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  91 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:38 2018
+[0] Tesla K80        | 49'C,   8 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  18 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  25 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:38 2018
+[0] Tesla K80        | 49'C,  76 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  30 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  86 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  26 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:39 2018
+[0] Tesla K80        | 49'C,  19 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  29 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  36 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:39 2018
+[0] Tesla K80        | 49'C,  77 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  26 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  78 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  17 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:40 2018
+[0] Tesla K80        | 49'C,   9 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  19 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  26 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:40 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:41 2018
+[0] Tesla K80        | 49'C,  15 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,  13 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:41 2018
+[0] Tesla K80        | 50'C,  80 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  44 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  88 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  42 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:42 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 46'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:42 2018
+[0] Tesla K80        | 49'C,  80 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  52 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  77 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  49 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:43 2018
+[0] Tesla K80        | 49'C,  48 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 62'C,  61 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   7 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  68 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:43 2018
+[0] Tesla K80        | 50'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   1 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   2 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 33'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:44 2018
+[0] Tesla K80        | 49'C,  80 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,  53 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,  77 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,  48 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
+ip-172-31-25-225  Thu Oct 11 04:16:44 2018
+[0] Tesla K80        | 49'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[1] Tesla K80        | 61'C,   2 % | 10960 / 11441 MB | ubuntu(10945M)
+[2] Tesla K80        | 47'C,   0 % | 10960 / 11441 MB | ubuntu(10945M)
+[3] Tesla K80        | 60'C,   2 % | 10960 / 11441 MB | ubuntu(10945M)
+[4] Tesla K80        | 34'C,   0 % |     0 / 11441 MB |
+[5] Tesla K80        | 36'C,   0 % |     0 / 11441 MB |
+[6] Tesla K80        | 39'C,   0 % |     0 / 11441 MB |
+[7] Tesla K80        | 42'C,   0 % |     0 / 11441 MB |
